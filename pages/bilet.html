@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Park Cinema</title>
+        <link rel="icon" type="image/png" href="../sekil/parkcinema.png">
+        <link rel="stylesheet" href="../src/input.css">
+        <link rel="stylesheet" href="../src/output.css">
+        <link rel="stylesheet" href="../src/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+    </head>
+
+    <body class="bg-[#373737]">
+
+      <header class="w-full h-19 shadow-md bg-[#373737]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between items-center h-16">
+
+            <!-- Logo -->
+            <div class="flex-shrink-0">
+              <a href="../index.html">
+                <img class="h-10 w-auto" src="../sekil/logo.svg" alt="Park Cinema Logo" />
+              </a>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex space-x-15">
+              <a href="#" class="text-gray-300 hover:text-red-600 font-medium transition duration-300">Kinoteatrlar</a>
+              <a href="#" class="text-gray-300 hover:text-red-600 font-medium transition duration-300">Aksiyalar</a>
+              <a href="#" class="text-gray-300 hover:text-red-600 font-medium transition duration-300">FAQ</a>
+              <a href="#" class="text-gray-300 hover:text-red-600 font-medium transition duration-300">Əlaqə</a>
+              <a href="#" class="text-gray-300 hover:text-red-600 font-medium transition duration-300">Profil</a>
+            </nav>
+
+            <!-- Language Dropdown -->
+            <div class="relative inline-block text-left z-11">
+
+              <button id="dropdownButton" onclick="toggleDropdown()" class="inline-flex items-center px-4 py-2 bg-[#373737] text-sm font-medium text-white rounded-md shadow hover:cursor-pointer focus:outline-none">
+                <img src="../sekil/az-flag.svg" alt="AZE" class="w-5 h-5 mr-2" />
+                <span>AZE</span>
+                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              <div id="dropdownMenu" class="hidden absolute right-0 mt-2 w-28 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 z-10">
+                <div class="py-1">
+
+                  <button class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full">
+                    <img src="../sekil/az-flag.svg" alt="AZE" class="w-5 h-5 mr-2" />
+                    AZE
+                  </button>
+
+                  <button class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full">
+                    <img src="../sekil/en-flag.svg" alt="EN" class="w-5 h-5 mr-2" />
+                    EN
+                  </button>
+
+                  <button class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full">
+                    <img src="../sekil/ru-flag.svg" alt="RU" class="w-5 h-5 mr-2" />
+                    RU
+                  </button>
+                  
+                </div>
+              </div>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden flex items-center">
+              <button id="menu-toggle" class="text-white hover:text-red-600 focus:outline-none">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+            </div>
+
+          </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="fixed bottom-0 left-0 right-0 bg-[#373737] p-4 rounded-t-2xl opacity-85 shadow-lg transform translate-y-full transition-transform duration-300 z-40">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-white p-3 rounded-xl shadow text-center">
+              <div>🕶️</div>
+              <div>Profil</div>
+            </div>
+            <div class="bg-white p-3 rounded-xl shadow text-center">
+              <div>🎟️</div>
+              <div>Mənim Biletlərim</div>
+            </div>
+            <div class="bg-white p-3 rounded-xl shadow text-center col-span-2">
+              <div>🎬</div>
+              <div>Kinoteatrlar</div>
+            </div>
+            <div class="bg-white p-3 rounded-xl shadow text-center col-span-2">
+              <div>📢</div>
+              <div>Aksiyalar</div>
+            </div>
+            <div class="bg-white p-3 rounded-xl shadow text-center">
+              <div>🎧</div>
+              <div>Əlaqə</div>
+            </div>
+            <div class="bg-white p-3 rounded-xl shadow text-center">
+              <div>❓</div>
+              <div>FAQ</div>
+            </div>
+            <div class="bg-white p-3 rounded-xl shadow text-center">
+              <div>📄</div>
+              <div>Hüquqi Şərtlər</div>
+            </div>
+            <div class="bg-white p-3 rounded-xl shadow text-center">
+              <div>▶️</div>
+              <div>Google Play</div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- bilet sehifesi -->
+
+      <h1 class="text-3xl text-white p-6 px-15">Oturacaq Seçimi</h1>
+
+      <!-- Kart -->
+
+      <div class="relative rounded-2xl shadow-xl overflow-hidden mx-4 md:mx-10 mb-5 text-white">
+
+        <div class="relative z-10 flex flex-row items-center gap-4 md:p-3 bg-cover bg-center"
+             style="background-image: url('../sekil/bgcinema_darkened.jpg');">
+      
+          <div class="w-40 md:w-40 flex-shrink-0">
+            <img src="../sekil/1745482450359__.webp " alt="Poster" class="w-full h-70 rounded-xl shadow-lg" />
+          </div>
+      
+          <div class="flex flex-col space-y-3 text-sm md:text-base">
+            <h2 class="text-xl md:text-2xl font-semibold">Patrul</h2>
+            <p>2D</p>
+            <p><i class="fa-solid fa-calendar-days"></i> 05.05.2025</p>
+            <p><i class="fa-solid fa-clock"></i> 20:10</p>
+            <p><span class="font-bold">Dil:</span> RU</p>
+            <p><span class="font-bold">Kinoteatr:</span> Metro Park</p>
+            <p><span class="font-bold">Zal:</span> 6</p>
+            <p><span class="font-bold">Müddət:</span> 01:30:00</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- asagi yazilar -->
+
+      <div class="bg-[#373737] text-white p-4">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-4 mx-6 sm:space-y-0">
+          
+          <div class="flex space-x-6">
+            <div class="flex items-center space-x-2">
+              <div class="w-4 h-4 rounded-full bg-gray-300"></div>
+              <span>Mövcuddur</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <div class="w-4 h-4 rounded-full bg-black"></div>
+              <span>Tutulmuş</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <div class="w-4 h-4 rounded-full bg-red-600"></div>
+              <span>Seçilmiş</span>
+            </div>
+          </div>
+      
+          <div class="flex space-x-6">
+            <span>Ailə <strong>4 AZN</strong></span>
+            <span>Böyük <strong>5 AZN</strong></span>
+          </div>
+      
+        </div>
+      </div>
+
+      <!-- Oturacaqlar -->
+      
+      <div class="bg-[#373737] text-white min-h-screen flex items-center justify-center px-2 sm:px-4">
+
+        <div class="w-full max-w-6xl space-y-4">
+
+          <!-- Zoom düymələri -->
+          <div class="flex justify-end space-x-2">
+            <button onclick="zoomIn()" class="bg-[#c7c7c7] text-black font-bold px-3 py-1 rounded text-sm sm:text-base">+</button>
+            <button onclick="zoomOut()" class="bg-[#c7c7c7] text-black font-bold px-3 py-1 rounded text-sm sm:text-base">−</button>
+          </div>
+      
+          <!-- Oturacaq konteyneri -->
+          <div id="cinema" class="bg-[#4d4d4d] rounded-lg p-4 sm:p-6 transition-transform duration-300 origin-top-left" style="transform: scale(1);">
+            <div id="seat-container" class="space-y-1 sm:space-y-2"></div>
+
+            <div class="text-center mt-15">
+              <h1 class="text-2xl">Ekran</h1>
+              <img src="../sekil/screen.svg" class="mx-auto mt-2" alt="screen">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- alis yeri -->
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-8 px-8 py-7 bg-[#373737] text-white">
+        <p class="text-base sm:text-lg font-semibold text-center sm:text-left">
+          Ümumi: <span class="font-bold">0 AZN</span>
+        </p>
+        <a href="../pages/odenis.html"><button class="bg-[#a83b2d] hover:bg-red-800 text-white font-semibold px-10 py-2 rounded-full transition duration-300 w-full sm:w-60 text-center">
+          Bilet Al
+        </button></a>
+      </div>
+
+      <!-- footer -->
+
+      <footer class="bg-[#87372c] text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-10 grid grid-cols-1 md:grid-cols-3 gap-10">
+      
+          <div class="flex flex-col gap-6">
+            <img src="../sekil/logo.svg" alt="Logo" class="w-40">
+          </div>
+      
+          <div class="grid grid-cols-2 gap-6 text-[#d9dadb]">
+            <div class="space-y-2">
+              <p class="hover:text-white transition duration-300 cursor-pointer">Kinoteatrlar</p>
+              <p class="hover:text-white transition duration-300 cursor-pointer">Aksiyalar</p>
+              <p class="hover:text-white transition duration-300 cursor-pointer">FAQ</p>
+            </div>
+
+            <div class="space-y-2">
+              <p class="hover:text-white transition duration-300 cursor-pointer">Profil</p>
+              <p class="hover:text-white transition duration-300 cursor-pointer">Əlaqə</p>
+              <p class="hover:text-white transition duration-300 cursor-pointer">Hüquqi Şərtlər</p>
+            </div>
+          </div>
+      
+          <!-- Sosial media -->
+          <div class="flex flex-col items-start md:items-end gap-8">
+            <p class="font-medium">Bizi izləyin</p>
+            <div class="flex gap-3">
+          
+              <div class="bg-[#d9dadb] text-[#E93E30] rounded-full w-10 h-10 flex items-center justify-center text-xl cursor-pointer">
+                <i class="fab fa-instagram"></i>
+              </div>
+          
+              <div class="bg-[#d9dadb] text-[#E93E30] rounded-full w-10 h-10 flex items-center justify-center text-xl cursor-pointer">
+                <i class="fab fa-facebook-f"></i>
+              </div>
+          
+              <div class="bg-[#d9dadb] text-[#E93E30] rounded-full w-10 h-10 flex items-center justify-center text-xl cursor-pointer">
+                <i class="fab fa-youtube"></i>
+              </div>
+          
+              <div class="bg-[#d9dadb] text-[#E93E30] rounded-full w-10 h-10 flex items-center justify-center text-xl cursor-pointer">
+                <i class="fab fa-telegram-plane"></i>
+              </div>
+          
+              <div class="bg-[#d9dadb] text-[#E93E30] rounded-full w-10 h-10 flex items-center justify-center text-xl cursor-pointer">
+                <i class="fab fa-tiktok"></i>
+              </div>
+          
+            </div>
+          </div>
+        </div>
+      
+        <!-- Footer bottom -->
+        <div class="border-t border-[#94423A] mt-10 pt-6 pb-4 px-4 sm:px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center text-sm">
+          
+          <div class="flex items-center gap-4">
+            <img src="../sekil/Visa.svg" alt="Visa" class="w-12 h-auto">
+            <p>© Park Cinema, 2025</p>
+          </div>
+
+          <p class="mt-4 md:mt-0">ESAM Innovations</p>
+        </div>
+      </footer>      
+
+      <script src="../js/script.js"></script>
+      <script src="../js/index.js"></script>
+      <script src="../js/seats.js"></script>
+
+    </body>
+</html>

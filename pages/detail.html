@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Park Cinema</title>
+        <link rel="icon" type="image/png" href="../sekil/parkcinema.png">
+        <link rel="stylesheet" href="../src/input.css">
+        <link rel="stylesheet" href="../src/output.css">
+        <link rel="stylesheet" href="../src/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body class="bg-[#373737]">
+
+      <header class="w-full h-19 shadow-md bg-[#373737]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between items-center h-16">
+
+            <!-- Logo -->
+            <div class="flex-shrink-0">
+              <a href="../index.html">
+                <img class="h-10 w-auto" src="../sekil/logo.svg" alt="Park Cinema Logo" />
+              </a>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex space-x-15">
+              <a href="#" class="text-gray-300 hover:text-red-600 font-medium transition duration-300">Kinoteatrlar</a>
+              <a href="#" class="text-gray-300 hover:text-red-600 font-medium transition duration-300">Aksiyalar</a>
+              <a href="#" class="text-gray-300 hover:text-red-600 font-medium transition duration-300">FAQ</a>
+              <a href="#" class="text-gray-300 hover:text-red-600 font-medium transition duration-300">Əlaqə</a>
+              <a href="#" class="text-gray-300 hover:text-red-600 font-medium transition duration-300">Profil</a>
+            </nav>
+
+            <!-- Language Dropdown -->
+            <div class="relative inline-block text-left z-11">
+
+              <button id="dropdownButton" onclick="toggleDropdown()" class="inline-flex items-center px-4 py-2 bg-[#373737] text-sm font-medium text-white rounded-md shadow hover:cursor-pointer focus:outline-none">
+                <img src="../sekil/az-flag.svg" alt="AZE" class="w-5 h-5 mr-2" />
+                <span>AZE</span>
+                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              <div id="dropdownMenu" class="hidden absolute right-0 mt-2 w-28 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 z-10">
+                <div class="py-1">
+
+                  <button class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full">
+                    <img src="../sekil/az-flag.svg" alt="AZE" class="w-5 h-5 mr-2" />
+                    AZE
+                  </button>
+
+                  <button class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full">
+                    <img src="../sekil/en-flag.svg" alt="EN" class="w-5 h-5 mr-2" />
+                    EN
+                  </button>
+
+                  <button class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full">
+                    <img src="../sekil/ru-flag.svg" alt="RU" class="w-5 h-5 mr-2" />
+                    RU
+                  </button>
+                  
+                </div>
+              </div>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden flex items-center">
+              <button id="menu-toggle" class="text-white hover:text-red-600 focus:outline-none">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+            </div>
+
+          </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="fixed bottom-0 left-0 right-0 bg-[#373737] p-4 rounded-t-2xl opacity-85 shadow-lg transform translate-y-full transition-transform duration-300 z-40">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-white p-3 rounded-xl shadow text-center">
+              <div>🕶️</div>
+              <div>Profil</div>
+            </div>
+            <div class="bg-white p-3 rounded-xl shadow text-center">
+              <div>🎟️</div>
+              <div>Mənim Biletlərim</div>
+            </div>
+            <div class="bg-white p-3 rounded-xl shadow text-center col-span-2">
+              <div>🎬</div>
+              <div>Kinoteatrlar</div>
+            </div>
+            <div class="bg-white p-3 rounded-xl shadow text-center col-span-2">
+              <div>📢</div>
+              <div>Aksiyalar</div>
+            </div>
+            <div class="bg-white p-3 rounded-xl shadow text-center">
+              <div>🎧</div>
+              <div>Əlaqə</div>
+            </div>
+            <div class="bg-white p-3 rounded-xl shadow text-center">
+              <div>❓</div>
+              <div>FAQ</div>
+            </div>
+            <div class="bg-white p-3 rounded-xl shadow text-center">
+              <div>📄</div>
+              <div>Hüquqi Şərtlər</div>
+            </div>
+            <div class="bg-white p-3 rounded-xl shadow text-center">
+              <div>▶️</div>
+              <div>Google Play</div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Detail yeri -->
+
+      <div class="max-w-7xl mx-auto flex flex-col bg-[#373737] lg:flex-row gap-10 p-8">
+
+        <!-- Soldakı poster card -->
+        <div class="flex-shrink-0 mt-4 lg:mt-8 lg:ml-4">
+          <img src="../sekil/1745482450359__.webp" alt="Patrul Poster" class="rounded-xl w-full max-w-xs mx-auto lg:mx-0" />
+        </div>
+    
+        <!-- Ortadakı mətn məlumatı -->
+        <div class="flex-grow space-y-3">
+          <h1 class="text-3xl font-bold text-[#d9dadb]">Patrul</h1>
+          <p class="text-lg text-[#d9dadb]">Komediya</p>
+    
+          <div class="flex items-center space-x-2">
+            <span class="font-bold text-[#d9dadb]">Dil:</span>
+            <img src="https://flagcdn.com/w40/ru.png" alt="Rus dili" class="w-6 h-4 rounded-sm" />
+          </div>
+    
+          <div class="flex items-center space-x-2">
+            <span class="font-bold text-[#d9dadb]">Altyazı:</span>
+            <img src="https://flagcdn.com/w40/az.png" alt="Azərbaycan dili" class="w-6 h-4 rounded-sm" />
+          </div>
+    
+          <p class="text-white"><span class="font-bold text-[#d9dadb]">Müddət:</span> 01:50:00</p>
+          <p class="text-white"><span class="font-bold text-[#d9dadb]">İl:</span> 2025</p>
+          <p class="text-white"><span class="font-bold text-[#d9dadb]">Ölkə:</span> Qazaxıstan</p>
+          <p class="text-white"><span class="font-bold text-[#d9dadb]">Rejissor:</span> Rustem Omarov</p>
+          <p class="text-white"><span class="font-bold text-[#d9dadb]">Aktyorlar:</span> Renat Muhambayev, Tambi Masayev, Imanbek, Adilcan Şombalov</p>
+          <p class="text-white"><span class="font-bold text-[#d9dadb]">Yaş Həddi:</span> 16+</p>
+          <p class="text-white"><span class="font-bold text-[#d9dadb]">Nümayiş Tarixi:</span> 01.05.2025</p>
+        </div>
+    
+        <!-- Sağdakı iframe video -->
+        <div class="flex-shrink-0 w-full lg:w-[550px] mt-6 lg:mt-8 lg:mr-4">
+          <div class="rounded-xl overflow-hidden" style="height: 310px;">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/72wpFJKUuv0?si=EvK-99So9kjHOvd4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Yazı bölməsi -->
+
+      <div class="w-full lg:w-1/2 px-10 mt-8 p-4">
+        <p class="text-base leading-6 text-gray-200">
+          Bu layihə, yalnız Qazaxıstan ərazisində deyil, həm də ölkə sərhədlərindən kənarda uğurla tanınan ilk Qazaxıstan françizasadır. 
+          Bu dəfə "Patrul" kainatı Abay bölgəsində, Semey şəhərində cərəyan edir – ölkə Prezidenti rəsmi səfərlə buraya gəlməlidir. 
+          Qəhrəmanlarımız bütün gücləri ilə Prezidentin kortejinə düşməyə çalışırlar. 
+          Ancaq Şefin başqa planları var – o, Prezidentin müşayiəti üçün məsul şəxs təyin olunub və hər şeyin problemsiz keçməsini istəyir. 
+          Qəhrəmanlarımızın reputasiyasını nəzərə alaraq, Şef Serikə, Medetə, Oljasa, Edilə, İlyasa və Beksə kortejdən uzaq durmağı əmr edir və 
+          bunun əvəzinə Semeyin elit polis əməkdaşları Dima və Renatı yanına çağıraraq kortejin rəhbəri təyin edir. 
+          Amma qəhrəmanlarımız bu arzudan imtina etmək istəmirlər, çünki Prezidentin müşayiəti hər bir polis işçisinin arzusu sayılır. 
+          Film, sıravi patrul və sahə polis əməkdaşlarının bu arzunu reallaşdırmaq üçün nələrə hazır olduqlarını göstərəcək. 
+          Eyni zamanda, milyonların sevimlisinə çevrilmiş qəhrəmanların gündəlik polis həyatında qarşılaşdıqları gülməli, gerçək və həyəcanlı hekayələrə də şahid olacağıq. 
+          Filmdə korrupsiya, məişət zorakılığı və xalqla hakimiyyət arasındakı münasibətlər kimi aktual və həssas ictimai problemlərə də toxunulur.
+        </p>
+      </div>
+
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-6 p-10">
+    
+        <!-- Tarix seçimi -->
+        <div class="flex gap-3">
+  
+          <div class="flex flex-col items-center justify-center w-16 h-24 bg-gray-300 text-black rounded-full font-bold">
+            <span>May</span>
+            <span class="text-2xl">5</span>
+          </div>
+    
+          <button class="flex flex-col items-center justify-center w-16 h-24 bg-gray-700 text-white rounded-full hover:bg-white hover:text-black transition">
+            <span>May</span>
+            <span class="text-2xl">6</span>
+          </button>
+
+          <button class="flex flex-col items-center justify-center w-16 h-24 bg-gray-700 text-white rounded-full hover:bg-white hover:text-black transition">
+            <span>May</span>
+            <span class="text-2xl">7</span>
+          </button>
+
+          <button class="flex flex-col items-center justify-center w-16 h-24 bg-gray-700 text-white rounded-full hover:bg-white hover:text-black transition">
+            <span>May</span>
+            <span class="text-2xl">8</span>
+          </button>
+
+          <button class="flex flex-col items-center justify-center w-16 h-24 bg-gray-700 text-white rounded-full hover:bg-white hover:text-black transition">
+            <span>May</span>
+            <span class="text-2xl">9</span>
+          </button>
+        </div>
+    
+        <!-- Seçim sahələri -->
+        <div class="flex flex-col sm:flex-row gap-6 w-full lg:w-2/3">
+
+          <!-- Kinoteatr seçimi -->
+          <div class="w-full">
+            <select class="w-full bg-transparent border-b border-white py-2 text-white text-center italic focus:outline-none hover:border-red-500 transition-colors duration-300">
+              <option selected disabled cl>Kinoteatr</option>
+              <option class="text-gray-500">Park Cinema</option>
+              <option class="text-gray-500">Metro Park</option>
+              <option class="text-gray-500">Flame Towers</option>
+              <option class="text-gray-500">Sevinc</option>
+              <option class="text-gray-500">Shahdag</option>
+            </select>
+          </div>
+    
+          <!-- Dil seçimi -->
+          <div class="w-full">
+            <select class="w-full bg-transparent border-b border-white py-2 text-white text-center italic focus:outline-none hover:border-red-500 transition-colors duration-300">
+              <option selected disabled>Dil</option>
+              <option class="text-gray-500">AZE</option>
+              <option class="text-gray-500">RU</option>
+              <option class="text-gray-500">EN</option>
+              <option class="text-gray-500">TR</option>
+            </select>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- siyahi yeri -->
+
+      <div class="space-y-4 max-w-6xl mx-auto mb-7 p-4 text-white">
+
+        <div class="grid grid-cols-1 md:grid-cols-6 items-center border-b border-white p-4 gap-4 text-center md:text-left bg-transparent">
+          <div class="text-lg font-semibold text-white">12:40</div>
+          <div class="md:col-span-1 text-white">Park Bulvar | Zal: 3</div>
+          <div class="flex items-center justify-center md:justify-start gap-2">
+            <span class="text-white">2D</span>
+            <img src="../sekil/az-flag.svg" alt="Azərbaycan bayrağı" class="w-6 h-6 rounded-sm" />
+          </div>
+          <div>
+            <span class="border border-white px-2 py-1 rounded">Altyazı yoxdur</span>
+          </div>
+          <div class="md:col-span-1 md:col-start-6"><a href="../pages/bilet.html">
+            <button class="bg-red-700 hover:bg-red-600 transition duration-300 px-4 py-2 rounded-full font-semibold w-40">
+              Bilet Al
+            </button></a>
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-6 items-center border-b border-white p-4 gap-4 text-center md:text-left bg-transparent">
+          <div class="text-lg font-semibold text-white">12:50</div>
+          <div class="md:col-span-1 text-white">Genclik Mall | Zal: 1</div>
+          <div class="flex items-center justify-center md:justify-start gap-2">
+            <span class="text-white">2D</span>
+            <img src="../sekil/az-flag.svg" alt="Azərbaycan bayrağı" class="w-6 h-6 rounded-sm" />
+          </div>
+          <div>
+            <span class="border border-white px-2 py-1 rounded">Altyazı yoxdur</span>
+          </div>
+          <div class="md:col-span-1 md:col-start-6"><a href="../pages/bilet.html">
+            <button class="bg-red-700 hover:bg-red-600 transition duration-300 px-4 py-2 rounded-full font-semibold w-40">
+              Bilet Al
+            </button></a>
+          </div>
+        </div>   
+
+        <div class="grid grid-cols-1 md:grid-cols-6 items-center border-b border-white p-4 gap-4 text-center md:text-left bg-transparent">
+          <div class="text-lg font-semibold text-white">13:20</div>
+          <div class="md:col-span-1 text-white">Shahdag | Zal: 2</div>
+          <div class="flex items-center justify-center md:justify-start gap-2">
+            <span class="text-white">2D</span>
+            <img src="../sekil/az-flag.svg" alt="Azərbaycan bayrağı" class="w-6 h-6 rounded-sm" />
+          </div>
+          <div>
+            <span class="border border-white px-2 py-1 rounded">Altyazı yoxdur</span>
+          </div>
+          <div class="md:col-span-1 md:col-start-6"><a href="../pages/bilet.html">
+            <button class="bg-red-700 hover:bg-red-600 transition duration-300 px-4 py-2 rounded-full font-semibold w-40">
+              Bilet Al
+            </button></a>
+          </div>
+        </div>   
+
+        <div class="grid grid-cols-1 md:grid-cols-6 items-center border-b border-white p-4 gap-4 text-center md:text-left bg-transparent">
+          <div class="text-lg font-semibold text-white">15:30</div>
+          <div class="md:col-span-1 text-white">Sevinc Mall | Zal: 6</div>
+          <div class="flex items-center justify-center md:justify-start gap-2">
+            <span class="text-white">2D</span>
+            <img src="../sekil/az-flag.svg" alt="Azərbaycan bayrağı" class="w-6 h-6 rounded-sm" />
+          </div>
+          <div>
+            <span class="border border-white px-2 py-1 rounded">Altyazı yoxdur</span>
+          </div>
+          <div class="md:col-span-1 md:col-start-6"><a href="../pages/bilet.html">
+            <button class="bg-red-700 hover:bg-red-600 transition duration-300 px-4 py-2 rounded-full font-semibold w-40">
+              Bilet Al
+            </button></a>
+          </div>
+        </div>   
+
+        <div class="grid grid-cols-1 md:grid-cols-6 items-center border-b border-white p-4 gap-4 text-center md:text-left bg-transparent">
+          <div class="text-lg font-semibold text-white">17:40</div>
+          <div class="md:col-span-1 text-white">Metro Park | Zal: 1</div>
+          <div class="flex items-center justify-center md:justify-start gap-2">
+            <span class="text-white">2D</span>
+            <img src="../sekil/az-flag.svg" alt="Azərbaycan bayrağı" class="w-6 h-6 rounded-sm" />
+          </div>
+          <div>
+            <span class="border border-white px-2 py-1 rounded">Altyazı yoxdur</span>
+          </div>
+          <div class="md:col-span-1 md:col-start-6"><a href="../pages/bilet.html">
+            <button class="bg-red-700 hover:bg-red-600 transition duration-300 px-4 py-2 rounded-full font-semibold w-40">
+              Bilet Al
+            </button></a>
+          </div>
+        </div>   
+
+        <div class="grid grid-cols-1 md:grid-cols-6 items-center border-b border-white p-4 gap-4 text-center md:text-left bg-transparent">
+          <div class="text-lg font-semibold text-white">19:50</div>
+          <div class="md:col-span-1 text-white">Park Bulvar | Zal: 3</div>
+          <div class="flex items-center justify-center md:justify-start gap-2">
+            <span class="text-white">2D</span>
+            <img src="../sekil/az-flag.svg" alt="Azərbaycan bayrağı" class="w-6 h-6 rounded-sm" />
+          </div>
+          <div>
+            <span class="border border-white px-2 py-1 rounded">Altyazı yoxdur</span>
+          </div>
+          <div class="md:col-span-1 md:col-start-6"><a href="../pages/bilet.html">
+            <button class="bg-red-700 hover:bg-red-600 transition duration-300 px-4 py-2 rounded-full font-semibold w-40">
+              Bilet Al
+            </button></a>
+          </div>
+        </div>   
+
+      </div>
+
+      <!-- footer -->
+
+      <footer class="bg-[#87372c] text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-10 grid grid-cols-1 md:grid-cols-3 gap-10">
+      
+          <div class="flex flex-col gap-6">
+            <img src="../sekil/logo.svg" alt="Logo" class="w-40">
+          </div>
+      
+          <div class="grid grid-cols-2 gap-6 text-[#d9dadb]">
+            <div class="space-y-2">
+              <p class="hover:text-white transition duration-300 cursor-pointer">Kinoteatrlar</p>
+              <p class="hover:text-white transition duration-300 cursor-pointer">Aksiyalar</p>
+              <p class="hover:text-white transition duration-300 cursor-pointer">FAQ</p>
+            </div>
+
+            <div class="space-y-2">
+              <p class="hover:text-white transition duration-300 cursor-pointer">Profil</p>
+              <p class="hover:text-white transition duration-300 cursor-pointer">Əlaqə</p>
+              <p class="hover:text-white transition duration-300 cursor-pointer">Hüquqi Şərtlər</p>
+            </div>
+          </div>
+      
+          <!-- Sosial media -->
+          <div class="flex flex-col items-start md:items-end gap-8">
+            <p class="font-medium">Bizi izləyin</p>
+            <div class="flex gap-3">
+          
+              <div class="bg-[#d9dadb] text-[#E93E30] rounded-full w-10 h-10 flex items-center justify-center text-xl cursor-pointer">
+                <i class="fab fa-instagram"></i>
+              </div>
+          
+              <div class="bg-[#d9dadb] text-[#E93E30] rounded-full w-10 h-10 flex items-center justify-center text-xl cursor-pointer">
+                <i class="fab fa-facebook-f"></i>
+              </div>
+          
+              <div class="bg-[#d9dadb] text-[#E93E30] rounded-full w-10 h-10 flex items-center justify-center text-xl cursor-pointer">
+                <i class="fab fa-youtube"></i>
+              </div>
+          
+              <div class="bg-[#d9dadb] text-[#E93E30] rounded-full w-10 h-10 flex items-center justify-center text-xl cursor-pointer">
+                <i class="fab fa-telegram-plane"></i>
+              </div>
+          
+              <div class="bg-[#d9dadb] text-[#E93E30] rounded-full w-10 h-10 flex items-center justify-center text-xl cursor-pointer">
+                <i class="fab fa-tiktok"></i>
+              </div>
+          
+            </div>
+          </div>
+        </div>
+      
+        <!-- Footer bottom -->
+        <div class="border-t border-[#94423A] mt-10 pt-6 pb-4 px-4 sm:px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center text-sm">
+          
+          <div class="flex items-center gap-4">
+            <img src="../sekil/Visa.svg" alt="Visa" class="w-12 h-auto">
+            <p>© Park Cinema, 2025</p>
+          </div>
+
+          <p class="mt-4 md:mt-0">ESAM Innovations</p>
+        </div>
+      </footer>      
+
+      <script src="../js/script.js"></script>
+      <script src="../js/index.js"></script>
+
+    </body>
+</html>
