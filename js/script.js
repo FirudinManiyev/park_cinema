@@ -20,13 +20,6 @@ document.addEventListener('click', function (event) {
   }
 });
 
-// Slider
-function scrollNext() {
-  const slider = document.getElementById("slider");
-  const width = slider.clientWidth;
-  slider.scrollBy({ left: width, behavior: "smooth" });
-}
-
 // oturacaqlar
 const seatContainer = document.getElementById("seat-container");
 

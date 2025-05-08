@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="src/input.css">
         <link rel="stylesheet" href="src/output.css">
         <link rel="stylesheet" href="src/style.css">
+        <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body class="bg-[#373737]">
@@ -120,61 +121,40 @@
       <!-- Slider -->
 
       <div class="relative overflow-hidden">
-        <!-- Slider container -->
         <div
           id="slider"
-          class="slider flex overflow-x-auto touch-pan-x snap-x snap-mandatory "
-          style="scroll-snap-type: x mandatory;" >
-
+          class="slider flex overflow-x-auto snap-x snap-mandatory scroll-smooth touch-pan-x"
+          style="scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;">
+          
+          <!-- Gradient üst-üstə -->
           <div class="absolute top-0 left-0 w-full h-70 bg-gradient-to-b from-black to-transparent z-10 pointer-events-none"></div>
           <div class="absolute bottom-0 left-0 w-full h-70 bg-gradient-to-t from-black to-transparent z-10 pointer-events-none"></div>
-
-          <!-- Slayt -->
-          <div class="min-w-full h-[605px] flex-shrink-0 snap-start">
+      
+          <!-- Slaytlar -->
+          <div class="min-w-full h-[80vh] flex-shrink-0 snap-start">
             <img src="sekil/minecraft.webp" class="w-full h-full object-cover" />
           </div>
-
-          <div class="min-w-full h-[605px] flex-shrink-0 snap-start">
+          <div class="min-w-full h-[80vh] flex-shrink-0 snap-start">
             <img src="sekil/popkorn.webp" class="w-full h-full object-cover" />
           </div>
-
-          <div class="min-w-full h-[605px] flex-shrink-0 snap-start">
+          <div class="min-w-full h-[80vh] flex-shrink-0 snap-start">
             <img src="sekil/belkede.webp" class="w-full h-full object-cover" />
           </div>
-
-          <div class="min-w-full h-[605px] flex-shrink-0 snap-start">
-            <img src="sekil/tagiyev.webp" class="w-full h-full object-cover" />
-          </div>
-
-          <div class="min-w-full h-[605px] flex-shrink-0 snap-start">
-            <img src="sekil/minecraft.webp" class="w-full h-full object-cover" />
-          </div>
-
-          <div class="min-w-full h-[605px] flex-shrink-0 snap-start">
-            <img src="sekil/popkorn.webp" class="w-full h-full object-cover" />
-          </div>
-
-          <div class="min-w-full h-[605px] flex-shrink-0 snap-start">
-            <img src="sekil/belkede.webp" class="w-full h-full object-cover" />
-          </div>
-
-          <div class="min-w-full h-[605px] flex-shrink-0 snap-start">
+          <div class="min-w-full h-[80vh] flex-shrink-0 snap-start">
             <img src="sekil/tagiyev.webp" class="w-full h-full object-cover" />
           </div>
         </div>
-
-        <!-- Sağdakı yarım dairə və ox -->
+      
+        <!-- Ox düyməsi -->
         <button
           onclick="scrollNext()"
           class="absolute right-0 top-1/2 -translate-y-1/2 bg-[#373737] rounded-l-full w-15 h-60 flex items-center opacity-80 justify-center shadow-md z-10">
-          
           <svg xmlns="http://www.w3.org/2000/svg" class="w-14 h-20" fill="none" viewBox="0 0 24 24" stroke="white">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
           </svg>
-
         </button>
       </div>
-
+      
       <!-- iki dene yazi yeri -->
 
       <div class="flex flex-col md:flex-row justify-center items-center py-12 bg-[#373737] space-y-10 md:space-y-0 md:space-x-[25rem]">
@@ -336,6 +316,7 @@
 
       <script src="js/script.js"></script>
       <script src="js/index.js"></script>
+      <script src="js/slider.js"></script>
 
     </body>
 </html>
